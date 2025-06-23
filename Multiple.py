@@ -16,11 +16,8 @@ with st.sidebar:
         default_index=0
     )
        
-# diabetes prediction page
 if selected == 'Diabetes Prediction':
     st.title('Diabetes Prediction using SVM')
-    
-    # input fields for diabetes prediction
     col1, col2 = st.columns(2)
     
     with col1:
@@ -34,8 +31,6 @@ if selected == 'Diabetes Prediction':
         BMI = st.text_input('BMI Value')
         DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function Value')
         Age = st.text_input('Age of the Person')
-
-    # prediction button
     if st.button('Diabetes Test Result'):
         input_data = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]
         input_data_as_float = [float(i) for i in input_data]
@@ -47,12 +42,8 @@ if selected == 'Diabetes Prediction':
             st.success('The person is not diabetic.')
         else:
             st.error('The person is diabetic.')
-
-# heart diaseaes
 if selected == 'Heart Disease Prediction':
     st.title('Heart Disease Prediction using SVM')
-    
-    # input fields for diabetes prediction
     col1, col2,col3= st.columns(3)
     
     with col1:
@@ -73,8 +64,6 @@ if selected == 'Heart Disease Prediction':
         oldpeak = st.text_input('Enter ST Depression Induced by Exercise')
         slope = st.text_input('Enter Slope of the Peak Exercise ST Segment')
         ca = st.text_input('Enter Number of Major Vessels Colored by Fluoroscopy')
-        
-    # prediction button
     if st.button('Diabetes Test Result'):
         input_data = [age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]
         input_data_as_float = [float(i) for i in input_data]
@@ -85,12 +74,8 @@ if selected == 'Heart Disease Prediction':
             st.success('The person does NOT have a heart disease.')
         else:
             st.error('The person HAS a heart disease.')
-
-# parkinsons prediction page
 if selected == 'Parkinsons Prediction':
     st.title('Parkinsons Prediction using SVM')
-    
-    # input fields for parkinsons prediction
     col1, col2 ,col3 ,col4= st.columns(4)
     with col1:
         fo = st.text_input('MDVP:Fo(Hz)')
@@ -112,7 +97,6 @@ if selected == 'Parkinsons Prediction':
         APQ = st.text_input('MDVP:APQ')
         DDA = st.text_input('Shimmer:DDA')
         NHR = st.text_input('NHR')
-    # prediction button
     if st.button('Parkinsons Test Result'):
         input_data = [fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ, DDP,
                       Shimmer, Shimmer_dB, APQ3, APQ5, APQ, DDA, NHR, HNR]
